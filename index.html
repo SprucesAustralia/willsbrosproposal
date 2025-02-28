@@ -75,7 +75,7 @@
             cursor: not-allowed;
         }
         .premium {
-            color: #d4af37; /* Golden color for premium tasks */
+            color: #d4af37; /* Golden color for premium tasks and "Premium" word */
             font-weight: bold;
         }
         .reviews {
@@ -102,6 +102,9 @@
             width: 300px;
             vertical-align: top;
         }
+        .review-card p {
+            margin-bottom: 0.5rem; /* Added to prevent overlapping */
+        }
         footer {
             text-align: center;
             padding: 2rem;
@@ -119,12 +122,38 @@
         a:hover {
             text-decoration: underline;
         }
+        /* Scope of Works Table Styling */
+        #scope table {
+            table-layout: fixed;
+            width: 100%;
+        }
+        #scope th, #scope td {
+            width: 33.33%;
+            word-wrap: break-word;
+        }
+        /* Checklist Table Styling */
+        #checklist table {
+            width: 100%;
+        }
+        #checklist td {
+            padding: 0.75rem;
+            vertical-align: top;
+        }
+        #checklist td:first-child {
+            width: 70%;
+        }
+        #checklist td:last-child {
+            width: 30%;
+            text-align: center;
+        }
         @media (max-width: 768px) {
             main { padding: 1rem; }
             table { font-size: 0.9rem; }
             th, td { padding: 0.5rem; }
             button { margin-left: 0; margin-top: 0.5rem; display: block; width: 100%; }
             .review-card { width: 100%; }
+            #checklist td:first-child { width: 60%; }
+            #checklist td:last-child { width: 40%; }
         }
     </style>
 </head>
@@ -141,7 +170,7 @@
         </section>
         <section id="scope">
             <h2>Scope of Work</h2>
-            <p>Below is a detailed breakdown of the cleaning tasks for each day, with premium tasks highlighted in gold (included only in the Premium Quality Option):</p>
+            <p>Below is a detailed breakdown of the cleaning tasks for each day, with premium tasks highlighted in gold (included only in the <span class="premium">Premium</span> Quality Option):</p>
             <table>
                 <thead>
                     <tr>
@@ -189,10 +218,8 @@
                         <th>Hours per Clean</th>
                         <th>Rate per Hour (ex GST)</th>
                         <th>Total per Clean (ex GST)</th>
-                        <th>GST (10%)</th>
-                        <th>Total per Clean (incl GST)</th>
-                        <th>Weekly Total (2 cleans, incl GST)</th>
-                        <th>Monthly Total (incl GST)</th>
+                        <th>Weekly Total (2 cleans, ex GST)</th>
+                        <th>Monthly Total (ex GST)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -201,30 +228,27 @@
                         <td>3</td>
                         <td>$55</td>
                         <td>$165</td>
-                        <td>$16.50</td>
-                        <td>$181.50</td>
-                        <td>$363.00</td>
-                        <td>$1,452.00</td>
+                        <td>$330</td>
+                        <td>$1,320</td>
                     </tr>
                     <tr>
-                        <td>Premium Quality Option</td>
+                        <td><span class="premium">Premium</span> Quality Option</td>
                         <td>3.5</td>
                         <td>$57</td>
                         <td>$199.50</td>
-                        <td>$19.95</td>
-                        <td>$219.45</td>
-                        <td>$438.90</td>
-                        <td>$1,755.60</td>
+                        <td>$399</td>
+                        <td>$1,596</td>
                     </tr>
                 </tbody>
             </table>
-            <p><strong>Note:</strong> The Budget Option ensures all essential cleaning tasks are completed efficiently, while the Premium Quality Option provides extra time for a more thorough clean, including the premium tasks listed in the scope of work.</p>
+            <p><strong>Note:</strong> All prices exclude GST.</p>
+            <p>The Budget Option ensures all essential cleaning tasks are completed efficiently, while the <span class="premium">Premium</span> Quality Option provides extra time for a more thorough clean, including the premium tasks listed in the scope of work.</p>
         </section>
         <section id="optional-extras">
             <h2>Optional Extras</h2>
             <ul>
-                <li>Deep Cleaning: $180 + GST</li>
-                <li>Window Cleaning (including exterior high access): $475 + GST</li>
+                <li>Deep Cleaning: $180 (ex GST)</li>
+                <li>Window Cleaning (including exterior high access): $475 (ex GST)</li>
             </ul>
         </section>
         <section id="payment-terms">
@@ -234,13 +258,28 @@
         <section id="checklist">
             <h2>Sample Cleaning Checklist</h2>
             <p>Our cleaners use an interactive mobile checklist to ensure consistency. Below is a sample of covered areas with detailed tasks. In practice, you can view each area’s status and upload photos via our client portal:</p>
-            <ul>
-                <li><strong>Office Area:</strong> Vacuuming carpets, mopping hard floors, emptying trash bins, dusting desks and shelves, wiping down chairs, sanitizing telephones and keyboards, cleaning light switches and door handles, straightening furniture. <button disabled>Upload Photo</button></li>
-                <li><strong>Kitchen (Office):</strong> Cleaning sinks and taps, wiping down microwaves, scrubbing countertops, cleaning inside toasters and kettles, wiping cupboards inside and out, disposing of trash, mopping floors. <button disabled>Upload Photo</button></li>
-                <li><strong>Restrooms (Office):</strong> Cleaning and sanitizing toilets, basins, and fixtures, polishing mirrors, scrubbing tile grout, mopping floors, restocking toilet paper, soap, and paper towels, emptying bins. <button disabled>Upload Photo</button></li>
-                <li><strong>Factory Toilets:</strong> Cleaning and sanitizing toilets, basins, and fixtures, polishing mirrors, scrubbing tile grout, mopping floors, restocking toilet paper, soap, and paper towels, emptying bins. <button disabled>Upload Photo</button></li>
-                <li><strong>Factory Kitchen:</strong> Cleaning sinks and taps, wiping down microwaves, scrubbing countertops, cleaning inside appliances (e.g., fridge, microwave), wiping cupboards, disposing of trash, mopping floors. <button disabled>Upload Photo</button></li>
-            </ul>
+            <table>
+                <tr>
+                    <td><strong>Office Area:</strong> Vacuuming carpets, mopping hard floors, emptying trash bins, dusting desks and shelves, wiping down chairs, sanitizing telephones and keyboards, cleaning light switches and door handles, straightening furniture.</td>
+                    <td><button disabled>Upload Photo</button></td>
+                </tr>
+                <tr>
+                    <td><strong>Kitchen (Office):</strong> Cleaning sinks and taps, wiping down microwaves, scrubbing countertops, cleaning inside toasters and kettles, wiping cupboards inside and out, disposing of trash, mopping floors.</td>
+                    <td><button disabled>Upload Photo</button></td>
+                </tr>
+                <tr>
+                    <td><strong>Restrooms (Office):</strong> Cleaning and sanitizing toilets, basins, and fixtures, polishing mirrors, scrubbing tile grout, mopping floors, restocking toilet paper, soap, and paper towels, emptying bins.</td>
+                    <td><button disabled>Upload Photo</button></td>
+                </tr>
+                <tr>
+                    <td><strong>Factory Toilets:</strong> Cleaning and sanitizing toilets, basins, and fixtures, polishing mirrors, scrubbing tile grout, mopping floors, restocking toilet paper, soap, and paper towels, emptying bins.</td>
+                    <td><button disabled>Upload Photo</button></td>
+                </tr>
+                <tr>
+                    <td><strong>Factory Kitchen:</strong> Cleaning sinks and taps, wiping down microwaves, scrubbing countertops, cleaning inside appliances (e.g., fridge, microwave), wiping cupboards, disposing of trash, mopping floors.</td>
+                    <td><button disabled>Upload Photo</button></td>
+                </tr>
+            </table>
             <p>After each clean, we provide a report with photos and notes on maintenance issues (e.g., lights out, leaks, or air conditioning problems).</p>
         </section>
         <section id="additional-info">
@@ -281,9 +320,10 @@
             <p><a href="https://g.co/kgs/wiRqpiB" target="_blank">View more reviews on Google</a></p>
         </section>
         <section id="map">
-            <h2>Our Location</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!4v1740718025838!6m8!1m7!1sMWyRnWyVP9sdCPb1qB7J8w!2m2!1d-28.03392605395354!2d153.3551360482055!3f271.77247974666057!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <p style="color: #e67e22; font-weight: bold;">Happy Birthday! We’ve made this proposal extra special for you!</p>
+            <h2>Your Location</h2>
+            <div style="text-align: center;">
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1740718025838!6m8!1m7!1sMWyRnWyVP9sdCPb1qB7J8w!2m2!1d-28.03392605395354!2d153.3551360482055!3f271.77247974666057!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </section>
     </main>
     <footer>
