@@ -105,6 +105,31 @@
         .review-card p {
             margin-bottom: 0.5rem; /* Added to prevent overlapping */
         }
+        .stars {
+            color: #f1c40f; /* Gold color for stars */
+            font-size: 1.2rem;
+        }
+        .view-more {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .view-more a {
+            display: inline-block;
+            background-color: #e67e22;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+        }
+        .view-more a::after {
+            content: "→";
+            position: absolute;
+            right: -20px;
+            font-size: 1.5rem;
+            color: #e67e22;
+        }
         footer {
             text-align: center;
             padding: 2rem;
@@ -210,7 +235,7 @@
         </section>
         <section id="pricing">
             <h2>Pricing Options</h2>
-            <p>We offer two pricing options for twice-weekly cleaning (Wednesdays and Fridays) at 6:30 AM:</p>
+            <p>We offer two pricing options for twice-weekly cleaning (Wednesdays and Fridays) at 6:30 AM (all prices exclude GST):</p>
             <table>
                 <thead>
                     <tr>
@@ -229,7 +254,7 @@
                         <td>$55</td>
                         <td>$165</td>
                         <td>$330</td>
-                        <td>$1,320</td>
+                        <td>$1,430.00</td>
                     </tr>
                     <tr>
                         <td><span class="premium">Premium</span> Quality Option</td>
@@ -237,11 +262,11 @@
                         <td>$57</td>
                         <td>$199.50</td>
                         <td>$399</td>
-                        <td>$1,596</td>
+                        <td>$1,729.00</td>
                     </tr>
                 </tbody>
             </table>
-            <p><strong>Note:</strong> All prices exclude GST.</p>
+            <p><strong>Calculation Note:</strong> Monthly totals are calculated by multiplying the weekly total by 4.333333 to account for the average number of weeks in a month.</p>
             <p>The Budget Option ensures all essential cleaning tasks are completed efficiently, while the <span class="premium">Premium</span> Quality Option provides extra time for a more thorough clean, including the premium tasks listed in the scope of work.</p>
         </section>
         <section id="optional-extras">
@@ -296,28 +321,22 @@
             <div class="reviews">
                 <div class="scroll">
                     <div class="review-card">
-                        <p><strong>Josie Ransom</strong> - 5 stars</p>
+                        <p><strong>Josie Ransom</strong> <span class="stars">★★★★★</span></p>
                         <p>"We’ve been using Spruces for office cleaning on the Gold Coast, and they always do an amazing job! The team is polite and professional, and they always leave our workspace looking fantastic. It’s such a nice feeling to walk into a fresh and clean office every morning. Thank you, Spruces!"</p>
                     </div>
                     <div class="review-card">
-                        <p><strong>Donewell</strong> - 5 stars</p>
+                        <p><strong>Donewell</strong> <span class="stars">★★★★★</span></p>
                         <p>"I’ve tried a few cleaning companies before, but Spruces is by far the best commercial cleaner on the Gold Coast. They really know what they’re doing, and you can tell they put effort into every job. Our office looks spotless, and it’s always such a pleasure working with their team. Highly recommended!"</p>
                     </div>
                     <div class="review-card">
-                        <p><strong>Michael Pronin</strong> - 5 stars</p>
-                        <p>"Great quality, would highly recommend"</p>
-                    </div>
-                    <div class="review-card">
-                        <p><strong>Danielle Laning</strong> - 5 stars</p>
+                        <p><strong>Danielle Laning</strong> <span class="stars">★★★★★</span></p>
                         <p>"Great cleaners, very reliable as well as flexible. If there is an event in the office they will come in and do an extra clean. Instead of having to wait for the scheduled cleans."</p>
-                    </div>
-                    <div class="review-card">
-                        <p><strong>Jenny Lanyon</strong> - 5 stars</p>
-                        <p>"Reliable, friendly cleaners and the company offers great cleaning services - our clean times are adjusted to our business requirements. Highly recommended"</p>
                     </div>
                 </div>
             </div>
-            <p><a href="https://g.co/kgs/wiRqpiB" target="_blank">View more reviews on Google</a></p>
+            <div class="view-more">
+                <a href="https://g.co/kgs/wiRqpiB" target="_blank">View more reviews on Google</a>
+            </div>
         </section>
         <section id="map">
             <h2>Your Location</h2>
