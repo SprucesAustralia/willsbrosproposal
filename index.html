@@ -6,77 +6,125 @@
     <title>Office Cleaning Proposal</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
+            color: #333;
         }
         header {
-            background-color: #333;
+            background-color: #2c3e50; /* Dark blue from Spruces branding */
             color: #fff;
-            padding: 1rem;
+            padding: 1.5rem;
             text-align: center;
         }
         main {
-            padding: 1rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         section {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 2rem;
+            margin: 0;
         }
         h2 {
-            color: #333;
+            color: #2c3e50;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #e67e22; /* Orange accent from Spruces */
+            padding-bottom: 0.5rem;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 1rem;
+            margin-top: 1rem;
         }
         th, td {
-            padding: 0.5rem;
+            padding: 0.75rem;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #eee;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #ecf0f1;
+            color: #2c3e50;
         }
         ul li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
         button {
-            background-color: #4CAF50;
+            background-color: #e67e22; /* Orange from Spruces */
             color: white;
             padding: 0.5rem 1rem;
             border: none;
+            border-radius: 4px;
             cursor: pointer;
             margin-left: 1rem;
         }
         button:hover:not(:disabled) {
-            background-color: #45a049;
+            background-color: #d35400;
         }
         button:disabled {
-            background-color: #cccccc;
+            background-color: #bdc3c7;
             cursor: not-allowed;
+        }
+        .premium {
+            color: #d4af37; /* Golden color for premium tasks */
+            font-weight: bold;
+        }
+        .reviews {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            margin-top: 1rem;
+        }
+        .reviews .scroll {
+            display: inline-block;
+            animation: scroll 20s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .review-card {
+            display: inline-block;
+            background-color: #fff;
+            padding: 1rem;
+            margin-right: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 300px;
+            vertical-align: top;
         }
         footer {
             text-align: center;
-            padding: 1rem;
-            background-color: #333;
+            padding: 2rem;
+            background-color: #2c3e50;
             color: #fff;
         }
+        footer button {
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+        }
+        a {
+            color: #e67e22;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
         @media (max-width: 768px) {
-            table {
-                font-size: 0.8rem;
-            }
-            th, td {
-                padding: 0.3rem;
-            }
-            button {
-                margin-left: 0;
-                display: block;
-                width: 100%;
-                margin-top: 0.5rem;
-            }
+            main { padding: 1rem; }
+            table { font-size: 0.9rem; }
+            th, td { padding: 0.5rem; }
+            button { margin-left: 0; margin-top: 0.5rem; display: block; width: 100%; }
+            .review-card { width: 100%; }
         }
     </style>
 </head>
@@ -93,17 +141,43 @@
         </section>
         <section id="scope">
             <h2>Scope of Work</h2>
-            <p>Our cleaning services cover the following areas and tasks, as discussed:</p>
-            <ul>
-                <li>Vacuuming and mopping floors</li>
-                <li>Cleaning and sanitizing restrooms (toilets, basins, and fixtures across office and factory areas)</li>
-                <li>Emptying and relining bins</li>
-                <li>Cleaning kitchen areas (sinks, taps, microwaves, cupboards, and toasters in both office and factory kitchens)</li>
-                <li>Dusting surfaces, light switches, and door handles (wiped down and sanitized)</li>
-                <li>Wiping down phones and office equipment</li>
-                <li>Quarterly deep cleaning of refrigerators in both kitchens</li>
-                <li>Additional services like window cleaning available upon request</li>
-            </ul>
+            <p>Below is a detailed breakdown of the cleaning tasks for each day, with premium tasks highlighted in gold (included only in the Premium Quality Option):</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Wednesday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Office Area</td>
+                        <td>Vacuuming carpets, mopping hard floors, emptying bins</td>
+                        <td>Vacuuming carpets, mopping hard floors, emptying bins, <span class="premium">dusting desks, wiping chairs, sanitizing phones, moving items to clean underneath</span></td>
+                    </tr>
+                    <tr>
+                        <td>Kitchen (Office)</td>
+                        <td>Cleaning sinks, taps, microwaves</td>
+                        <td>Cleaning sinks, taps, microwaves, <span class="premium">wiping down cupboards, cleaning inside toasters, scrubbing stovetops</span></td>
+                    </tr>
+                    <tr>
+                        <td>Restrooms (Office)</td>
+                        <td>Cleaning and sanitizing toilets, basins, fixtures</td>
+                        <td>Cleaning and sanitizing toilets, basins, fixtures, <span class="premium">polishing mirrors, scrubbing tile grout, restocking supplies</span></td>
+                    </tr>
+                    <tr>
+                        <td>Factory Toilets</td>
+                        <td>Cleaning and sanitizing toilets, basins, fixtures</td>
+                        <td>Cleaning and sanitizing toilets, basins, fixtures, <span class="premium">polishing mirrors, scrubbing tile grout, restocking supplies</span></td>
+                    </tr>
+                    <tr>
+                        <td>Factory Kitchen</td>
+                        <td>Cleaning sinks, taps, microwaves</td>
+                        <td>Cleaning sinks, taps, microwaves, <span class="premium">wiping down cupboards, cleaning inside appliances, organizing countertops</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
         <section id="pricing">
             <h2>Pricing Options</h2>
@@ -118,6 +192,7 @@
                         <th>GST (10%)</th>
                         <th>Total per Clean (incl GST)</th>
                         <th>Weekly Total (2 cleans, incl GST)</th>
+                        <th>Monthly Total (incl GST)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -129,6 +204,7 @@
                         <td>$16.50</td>
                         <td>$181.50</td>
                         <td>$363.00</td>
+                        <td>$1,452.00</td>
                     </tr>
                     <tr>
                         <td>Premium Quality Option</td>
@@ -138,20 +214,32 @@
                         <td>$19.95</td>
                         <td>$219.45</td>
                         <td>$438.90</td>
+                        <td>$1,755.60</td>
                     </tr>
                 </tbody>
             </table>
-            <p><strong>Note:</strong> The Budget Option ensures all essential cleaning tasks are completed efficiently, while the Premium Quality Option provides extra time for a more thorough clean, ideal for high-traffic areas like factory toilets.</p>
+            <p><strong>Note:</strong> The Budget Option ensures all essential cleaning tasks are completed efficiently, while the Premium Quality Option provides extra time for a more thorough clean, including the premium tasks listed in the scope of work.</p>
+        </section>
+        <section id="optional-extras">
+            <h2>Optional Extras</h2>
+            <ul>
+                <li>Deep Cleaning: $180 + GST</li>
+                <li>Window Cleaning (including exterior high access): $475 + GST</li>
+            </ul>
+        </section>
+        <section id="payment-terms">
+            <h2>Payment Terms</h2>
+            <p>Payment must be made monthly on the first day with no additional charges. If a 14-day account is required, a 5% surcharge applies. For a 30-day account, a 7% surcharge applies.</p>
         </section>
         <section id="checklist">
             <h2>Sample Cleaning Checklist</h2>
-            <p>Our cleaners use an interactive mobile checklist to ensure consistency. Below is a sample of covered areas. In practice, you can view each area’s status and upload photos via our client portal:</p>
+            <p>Our cleaners use an interactive mobile checklist to ensure consistency. Below is a sample of covered areas with detailed tasks. In practice, you can view each area’s status and upload photos via our client portal:</p>
             <ul>
-                <li>Office Area <button disabled>Upload Photo</button></li>
-                <li>Kitchen (Office) <button disabled>Upload Photo</button></li>
-                <li>Restrooms (Office) <button disabled>Upload Photo</button></li>
-                <li>Factory Toilets <button disabled>Upload Photo</button></li>
-                <li>Factory Kitchen <button disabled>Upload Photo</button></li>
+                <li><strong>Office Area:</strong> Vacuuming carpets, mopping hard floors, emptying trash bins, dusting desks and shelves, wiping down chairs, sanitizing telephones and keyboards, cleaning light switches and door handles, straightening furniture. <button disabled>Upload Photo</button></li>
+                <li><strong>Kitchen (Office):</strong> Cleaning sinks and taps, wiping down microwaves, scrubbing countertops, cleaning inside toasters and kettles, wiping cupboards inside and out, disposing of trash, mopping floors. <button disabled>Upload Photo</button></li>
+                <li><strong>Restrooms (Office):</strong> Cleaning and sanitizing toilets, basins, and fixtures, polishing mirrors, scrubbing tile grout, mopping floors, restocking toilet paper, soap, and paper towels, emptying bins. <button disabled>Upload Photo</button></li>
+                <li><strong>Factory Toilets:</strong> Cleaning and sanitizing toilets, basins, and fixtures, polishing mirrors, scrubbing tile grout, mopping floors, restocking toilet paper, soap, and paper towels, emptying bins. <button disabled>Upload Photo</button></li>
+                <li><strong>Factory Kitchen:</strong> Cleaning sinks and taps, wiping down microwaves, scrubbing countertops, cleaning inside appliances (e.g., fridge, microwave), wiping cupboards, disposing of trash, mopping floors. <button disabled>Upload Photo</button></li>
             </ul>
             <p>After each clean, we provide a report with photos and notes on maintenance issues (e.g., lights out, leaks, or air conditioning problems).</p>
         </section>
@@ -163,6 +251,39 @@
                 <li><strong>Flexible Scheduling:</strong> We accommodate your 6:30 AM start time to align with your guard dog schedule.</li>
                 <li><strong>Quality Assurance:</strong> State-of-the-art equipment and eco-friendly products ensure a top-notch clean.</li>
             </ul>
+        </section>
+        <section id="reviews">
+            <h2>Google Reviews</h2>
+            <div class="reviews">
+                <div class="scroll">
+                    <div class="review-card">
+                        <p><strong>Josie Ransom</strong> - 5 stars</p>
+                        <p>"We’ve been using Spruces for office cleaning on the Gold Coast, and they always do an amazing job! The team is polite and professional, and they always leave our workspace looking fantastic. It’s such a nice feeling to walk into a fresh and clean office every morning. Thank you, Spruces!"</p>
+                    </div>
+                    <div class="review-card">
+                        <p><strong>Donewell</strong> - 5 stars</p>
+                        <p>"I’ve tried a few cleaning companies before, but Spruces is by far the best commercial cleaner on the Gold Coast. They really know what they’re doing, and you can tell they put effort into every job. Our office looks spotless, and it’s always such a pleasure working with their team. Highly recommended!"</p>
+                    </div>
+                    <div class="review-card">
+                        <p><strong>Michael Pronin</strong> - 5 stars</p>
+                        <p>"Great quality, would highly recommend"</p>
+                    </div>
+                    <div class="review-card">
+                        <p><strong>Danielle Laning</strong> - 5 stars</p>
+                        <p>"Great cleaners, very reliable as well as flexible. If there is an event in the office they will come in and do an extra clean. Instead of having to wait for the scheduled cleans."</p>
+                    </div>
+                    <div class="review-card">
+                        <p><strong>Jenny Lanyon</strong> - 5 stars</p>
+                        <p>"Reliable, friendly cleaners and the company offers great cleaning services - our clean times are adjusted to our business requirements. Highly recommended"</p>
+                    </div>
+                </div>
+            </div>
+            <p><a href="https://g.co/kgs/wiRqpiB" target="_blank">View more reviews on Google</a></p>
+        </section>
+        <section id="map">
+            <h2>Our Location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1740718025838!6m8!1m7!1sMWyRnWyVP9sdCPb1qB7J8w!2m2!1d-28.03392605395354!2d153.3551360482055!3f271.77247974666057!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p style="color: #e67e22; font-weight: bold;">Happy Birthday! We’ve made this proposal extra special for you!</p>
         </section>
     </main>
     <footer>
